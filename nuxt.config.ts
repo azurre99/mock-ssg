@@ -12,7 +12,7 @@ export default defineNuxtConfig({
         "/": { prerender: true }
     },
     hooks: {
-        async 'nitro:config' (nitroConfig) {
+        /*async 'nitro:config' (nitroConfig) {
             if (nitroConfig.dev) { return }
             // ..Async logic..
             if (nitroConfig.prerender?.routes) {
@@ -25,8 +25,8 @@ export default defineNuxtConfig({
                     }
                 }
             })
-        }
-        /*async "prerender:routes"(ctx) {
+        },*/
+        async "prerender:routes"(ctx) {
             const routes = [
                 '/socks/',
                 '/hats/beanies/',
@@ -36,6 +36,6 @@ export default defineNuxtConfig({
             for (const route of routes) {
                 ctx.routes.add(`${route}`)
             }
-        },*/
+        }
     }
 })
