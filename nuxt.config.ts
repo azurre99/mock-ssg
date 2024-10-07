@@ -16,7 +16,11 @@ export default defineNuxtConfig({
     routeRules: {
         "/products/": {
             prerender: true
-        }
+        },
+        "/products/:id": {
+          ssr: false
+        },
+        '/**': { static: true },
     },
     hooks: {
         async "prerender:routes"(ctx) {
