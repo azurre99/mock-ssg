@@ -6,26 +6,19 @@ const routes = [
 ]
 
 export default defineNuxtConfig({
+    devtools: {
+        enabled: true,
+        timeline: {
+            enabled: true,
+        },
+    },
     compatibilityDate: '2024-04-03',
-    devtools: {enabled: true},
     routeRules: {
-        "/": { prerender: true }
+        "/products/": {
+            prerender: true
+        }
     },
     hooks: {
-        /*async 'nitro:config' (nitroConfig) {
-            if (nitroConfig.dev) { return }
-            // ..Async logic..
-            if (nitroConfig.prerender?.routes) {
-                //nitroConfig.prerender.routes.push(...routes)
-            }
-            routes.forEach((route) => {
-                if (nitroConfig.routeRules != undefined) {
-                    nitroConfig.routeRules[`${route}`] = {
-                        prerender: true
-                    }
-                }
-            })
-        },*/
         async "prerender:routes"(ctx) {
             const routes = [
                 '/socks/',
@@ -34,8 +27,9 @@ export default defineNuxtConfig({
             ]
 
             for (const route of routes) {
-                ctx.routes.add(`${route}`)
+                ctx.routes.add(route)
             }
         }
-    }
+    },
+    ssr: true
 })

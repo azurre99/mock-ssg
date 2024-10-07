@@ -12,6 +12,10 @@ export default defineEventHandler(async (event) => {
             return {
                 title: `Hats Beanies - ${date}`
             }
+        case '/products/':
+            return {
+                title: `Product - ${date}`
+            }
         case '/blogs/1341/': {
             return {
                 title: `Blogs 1341 - ${date}`
