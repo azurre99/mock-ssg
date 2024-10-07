@@ -8,6 +8,9 @@ const routes = [
 export default defineNuxtConfig({
     compatibilityDate: '2024-04-03',
     devtools: {enabled: true},
+    routeRules: {
+        "/": { prerender: true }
+    },
     hooks: {
         async 'nitro:config' (nitroConfig) {
             if (nitroConfig.dev) { return }
