@@ -20,16 +20,9 @@ export default defineNuxtConfig({
         "/products/:id": {
           ssr: false
         },
-        '/**': { static: true },
     },
     hooks: {
         async "prerender:routes"(ctx) {
-            const routes = [
-                '/socks/',
-                '/hats/beanies/',
-                '/blogs/1341/',
-            ]
-
             for (const route of routes) {
                 ctx.routes.add(route)
             }

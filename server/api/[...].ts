@@ -2,6 +2,7 @@ export default defineEventHandler(async (event) => {
     const url = getRequestURL(event)
     const slug = url.searchParams.get('slug')
     console.log(slug)
+
     const date = new Date().toISOString()
     switch (slug) {
         case '/socks/':
