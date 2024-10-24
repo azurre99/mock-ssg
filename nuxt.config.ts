@@ -3,7 +3,7 @@ const routes = [
     '/A',
     '/B',
     '/blogs/1341',
-    '/C/'
+    '/C'
 ]
 
 export default defineNuxtConfig({

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-definePageMeta({
-  path: '/:slug(.*)*/'
-})
+// definePageMeta({
+//   path: '/:slug(.*)*/'
+// })
 
 const router = useRouter();
 const route = useRoute();
@@ -16,7 +16,7 @@ if (!pageSlug.startsWith("/")) pageSlug = `/${pageSlug}`;
 if (!pageSlug.endsWith("/")) pageSlug += "/";
 
 console.log(`Fetching data for slug: ${pageSlug}`)
-const { data } = await useFetch(`/api/page?slug=${pageSlug}`);
+const { data } = await useFetch(`/api/page?slug=socks`);
 </script>
 
 <template>
