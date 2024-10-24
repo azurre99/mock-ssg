@@ -3,6 +3,7 @@ const routes = [
     '/A',
     '/B',
     '/blogs/1341',
+    '/C/'
 ]
 
 export default defineNuxtConfig({
@@ -29,6 +30,15 @@ export default defineNuxtConfig({
             routes: [
                 ...routes
             ]
+        },
+        vercel: {
+            config: {
+                overrides: {
+                    "B/index.html": {
+                        "path": "B/"
+                    },
+                }
+            }
         }
     },
     router: {
