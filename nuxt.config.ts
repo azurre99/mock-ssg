@@ -1,8 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const routes = [
+    '/test/',
     '/socks/',
     '/hats/beanies',
-    '/blogs/1341/',
+    '/blogs/1341',
 ]
 
 export default defineNuxtConfig({
@@ -32,7 +33,9 @@ export default defineNuxtConfig({
     nitro: {
         preset: 'vercel',
         prerender: {
-            autoSubfolderIndex: false
+            autoSubfolderIndex: false,
+            crawlLinks: false,
+
         }
     },
 })
