@@ -1,4 +1,8 @@
 {
-  "trailingSlash": true,
-  "cleanUrls": true
+  "rewrites": [
+    {
+      "source": "/socks/",
+      "destination": "/socks"
+    }
+  ]
 }
