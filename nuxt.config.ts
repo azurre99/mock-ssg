@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const routes = [
-    '/socks/',
     '/socks',
+    '/socks/',
     '/hats/beanies/',
     '/blogs/1341/',
 ]
