@@ -1,9 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const routes = [
-    '/no-trailing/',
-    '/test/',
-    '/socks/',
-    '/hats/beanies/',
+    '/A/',
+    '/B/',
     '/blogs/1341/',
 ]
 
@@ -21,11 +19,6 @@ export default defineNuxtConfig({
         },
         "/products/:id": {
           ssr: false
-        }
-    },
-    hooks: {
-        "pages:extend" (pages) {
-          console.log(pages)
         }
     },
     ssr: true,
