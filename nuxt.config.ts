@@ -35,10 +35,11 @@ export default defineNuxtConfig({
             config: {
                 overrides: {
                     "B/index.html": {
-                        "path": "B/"
+                        "path": "B/?$"
                     },
                 }
-            }
+            },
+
         }
     },
     router: {
