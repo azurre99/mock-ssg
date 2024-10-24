@@ -21,20 +21,20 @@ export default defineNuxtConfig({
         },
         "/products/:id": {
           ssr: false
-        },
+        }
     },
     hooks: {
-        // async "prerender:routes"(ctx) {
-        //     for (const route of routes) {
-        //         ctx.routes.add(route)
-        //     }
-        // }
+        "pages:extend" (pages) {
+            pages.map(() => {
+
+            })
+            console.log(pages)
+        }
     },
     ssr: true,
     nitro: {
         preset: 'vercel',
         prerender: {
-            autoSubfolderIndex: false,
             crawlLinks: false,
             routes: [
                 ...routes
@@ -45,5 +45,5 @@ export default defineNuxtConfig({
         options: {
             strict: true,
         }
-    }
+    },
 })
