@@ -24,11 +24,11 @@ export default defineNuxtConfig({
         },
     },
     hooks: {
-        async "prerender:routes"(ctx) {
-            for (const route of routes) {
-                ctx.routes.add(route)
-            }
-        }
+        // async "prerender:routes"(ctx) {
+        //     for (const route of routes) {
+        //         ctx.routes.add(route)
+        //     }
+        // }
     },
     ssr: true,
     nitro: {
@@ -36,6 +36,9 @@ export default defineNuxtConfig({
         prerender: {
             autoSubfolderIndex: false,
             crawlLinks: false,
+            routes: [
+                ...routes
+            ]
         }
     },
     router: {
