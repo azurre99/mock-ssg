@@ -1,10 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const routes = [
-    '/no-trailing',
+    '/no-trailing/',
     '/test/',
     '/socks/',
-    '/hats/beanies',
-    '/blogs/1341',
+    '/hats/beanies/',
+    '/blogs/1341/',
 ]
 
 export default defineNuxtConfig({
@@ -23,16 +23,19 @@ export default defineNuxtConfig({
           ssr: false
         }
     },
-    ssr: true,
-    generate: {
-        routes: [
-            ...routes
-        ]
+    hooks: {
+        "pages:extend" (pages) {
+          console.log(pages)
+        }
     },
+    ssr: true,
     nitro: {
         preset: 'vercel',
         prerender: {
-            crawlLinks: false
+            crawlLinks: false,
+            routes: [
+                ...routes
+            ]
         }
     },
     router: {
