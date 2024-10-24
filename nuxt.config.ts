@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const routes = [
+    '/no-trailing',
     '/test/',
     '/socks/',
     '/hats/beanies',
@@ -35,7 +36,12 @@ export default defineNuxtConfig({
         prerender: {
             autoSubfolderIndex: false,
             crawlLinks: false,
-
         }
     },
+    router: {
+        options: {
+            sensitive: false,
+            strict: false
+        }
+    }
 })
