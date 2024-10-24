@@ -30,5 +30,10 @@ export default defineNuxtConfig({
                 ...routes
             ]
         }
+    },
+    router: {
+        options: {
+            strict: false
+        }
     }
 })
