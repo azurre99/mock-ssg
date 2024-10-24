@@ -1,7 +1,7 @@
 <script setup lang="ts">
-/*definePageMeta({
-  path: '/:slug(.*)*'
-})*/
+definePageMeta({
+  path: '/:slug(.*)*/'
+})
 
 const router = useRouter();
 const route = useRoute();
