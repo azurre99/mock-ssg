@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const routes = [
     '/A',
-    '/B',
+    '/B/',
     '/blogs/1341',
     '/C'
 ]
@@ -29,15 +29,12 @@ export default defineNuxtConfig({
             crawlLinks: false,
             routes: [
                 ...routes
-            ]
+            ],
+            autoSubfolderIndex: false
         },
         vercel: {
             config: {
-                overrides: {
-                    "B/index.html": {
-                        "path": "B/?$"
-                    },
-                }
+
             },
 
         }
@@ -46,5 +43,8 @@ export default defineNuxtConfig({
         options: {
             strict: false
         }
+    },
+    site: {
+        trailingSlash: true,
     }
 })

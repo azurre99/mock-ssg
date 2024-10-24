@@ -16,7 +16,7 @@ if (!pageSlug.startsWith("/")) pageSlug = `/${pageSlug}`;
 if (!pageSlug.endsWith("/")) pageSlug += "/";
 
 console.log(`Fetching data for slug: ${pageSlug}`)
-const { data } = await useFetch(`/api/page?slug=socks`);
+const { data } = await useFetch(`/api/page?slug=${pageSlug}`);
 </script>
 
 <template>
