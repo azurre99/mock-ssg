@@ -1,7 +1,7 @@
 <script setup lang="ts">
-definePageMeta({
+/*definePageMeta({
   path: '/:slug(.*)*'
-})
+})*/
 
 const router = useRouter();
 const route = useRoute();
@@ -9,7 +9,6 @@ const route = useRoute();
 let pageSlug = route.path;
 if (!pageSlug.startsWith("/")) pageSlug = `/${pageSlug}`;
 if (!pageSlug.endsWith("/")) {
-  router.push({ path: route.path + "/" });
   pageSlug += "/";
 }
 

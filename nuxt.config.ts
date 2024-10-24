@@ -1,8 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const routes = [
-    '/A/',
-    '/B/',
-    '/blogs/1341/',
+    '/A',
+    '/B',
+    '/blogs/1341',
 ]
 
 export default defineNuxtConfig({
@@ -30,10 +30,5 @@ export default defineNuxtConfig({
                 ...routes
             ]
         }
-    },
-    router: {
-        options: {
-            strict: true,
-        }
-    },
+    }
 })
