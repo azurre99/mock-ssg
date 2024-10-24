@@ -23,22 +23,16 @@ export default defineNuxtConfig({
           ssr: false
         }
     },
-    hooks: {
-        "pages:extend" (pages) {
-            pages.map(() => {
-
-            })
-            console.log(pages)
-        }
-    },
     ssr: true,
+    generate: {
+        routes: [
+            ...routes
+        ]
+    },
     nitro: {
         preset: 'vercel',
         prerender: {
-            crawlLinks: false,
-            routes: [
-                ...routes
-            ]
+            crawlLinks: false
         }
     },
     router: {

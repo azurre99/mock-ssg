@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import {withTrailingSlash} from "ufo";
 
 const router = useRouter();
 const route = useRoute();
@@ -18,7 +17,7 @@ console.log(`Fetching data for slug: ${pageSlug}`)
 const { data } = await useFetch(`/api/page?slug=${pageSlug}`);
 
 definePageMeta({
-  path: withTrailingSlash(route.path)
+  path: '/:slug/'
 })
 </script>
 
