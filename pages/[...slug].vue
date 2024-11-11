@@ -19,7 +19,11 @@ const mathRandom = Math.random()
 
 <template>
   <div>
-    <NuxtLink :to="`/something/${mathRandom}`" />
+    <ClientOnly>
+      <NuxtLink :to="`/something/${mathRandom}`">
+        Navigate somewhere
+      </NuxtLink>
+    </ClientOnly>
     <TemplateRenderer :page-template="data?.title || 'No title'" />
   </div>
 </template>
