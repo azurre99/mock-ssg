@@ -3,7 +3,7 @@
 const router = useRouter();
 const route = useRoute();
 
-let pageSlug = route.path;
+/*let pageSlug = route.path;
 if (!pageSlug.startsWith("/")) pageSlug = `/${pageSlug}`;
 if (!pageSlug.endsWith("/")) {
   pageSlug += "/";
@@ -11,9 +11,12 @@ if (!pageSlug.endsWith("/")) {
 
 if (!pageSlug.startsWith("/")) pageSlug = `/${pageSlug}`;
 if (!pageSlug.endsWith("/")) pageSlug += "/";
+ */
+let pageSplit = route.path.split("/").filter((it) => it)
+let lastPart = pageSplit.length > 0 ? pageSplit[pageSplit.length - 1] : ""
 
 const mathRandom = Math.floor(Math.random() * 10)
-const { data } = await useFetch(`/api/page${pageSlug}`);
+const { data } = await useFetch(`/api/page/${lastPart}`);
 </script>
 
 <template>
