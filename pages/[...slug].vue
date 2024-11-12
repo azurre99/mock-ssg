@@ -23,7 +23,9 @@ const mathRandom = Math.floor(Math.random() * 10)
         Navigate to {{ mathRandom }}
       </NuxtLink>
     </ClientOnly>
-    <TemplateRenderer :page-template="data?.title || 'No title'" />
+    <div>
+      {{ data }}
+    </div>
   </div>
 </template>
 

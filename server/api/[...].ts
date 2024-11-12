@@ -1,31 +1,7 @@
 export default defineEventHandler(async (event) => {
     const url = getRequestURL(event)
-    const slug = url.searchParams.get('slug')
-    console.log(url.href)
+    console.log(`Fetching url ${url.href}`)
 
-    const date = new Date().toISOString()
-    switch (slug) {
-        case '/socks/':
-            return {
-                title: `Socks - ${date}`
-            }
-        case '/hats/beanies/':
-            return {
-                title: `Hats Beanies - ${date}`
-            }
-        case '/products/':
-            return {
-                title: `Product - ${date}`
-            }
-        case '/blogs/1341/': {
-            return {
-                title: `Blogs 1341 - ${date}`
-            }
-        }
-        default:
-            return {
-                title: `No title - ${date}`
-            }
-    }
-
+    const todo = Math.ceil(Math.random() * 201)
+    return await $fetch(`https://jsonplaceholder.typicode.com/todos/${todo}`)
 });
