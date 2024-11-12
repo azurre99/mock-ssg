@@ -9,11 +9,17 @@ export default defineNuxtConfig({
     },
     compatibilityDate: '2024-04-03',
     routeRules: {
-        "/**": { isr: true, ssr: true }
+        "/**": { swr: true }
     },
     router: {
         options: {
             strict: false
         }
+    },
+    experimental: {
+        componentIslands: {
+            selectiveClient: true
+        },
+        payloadExtraction: true
     }
 })
