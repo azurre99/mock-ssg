@@ -6,6 +6,7 @@
     <h3>
       This i client component man
     </h3>
+    <Jumper />
   </div>
 </template>
 <script setup lang="ts">
