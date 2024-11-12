@@ -12,8 +12,8 @@ if (!pageSlug.endsWith("/")) {
 if (!pageSlug.startsWith("/")) pageSlug = `/${pageSlug}`;
 if (!pageSlug.endsWith("/")) pageSlug += "/";
 
-const { data } = await useFetch(`/api/page`);
 const mathRandom = Math.floor(Math.random() * 10)
+const { data } = await useFetch(`/api/page${pageSlug}`);
 </script>
 
 <template>
