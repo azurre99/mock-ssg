@@ -1,7 +1,7 @@
 export default defineEventHandler(async (event) => {
     const url = getRequestURL(event)
     const slug = url.searchParams.get('slug')
-    console.log(url)
+    console.log(url.href)
 
     const date = new Date().toISOString()
     switch (slug) {
