@@ -19,7 +19,7 @@ const mathRandom = Math.floor(Math.random() * 10)
 <template>
   <div>
     <ClientOnly>
-      <NuxtLink :to="`/something/${mathRandom}`">
+      <NuxtLink :to="`/something/${mathRandom}/`">
         Navigate to {{ mathRandom }}
       </NuxtLink>
     </ClientOnly>
