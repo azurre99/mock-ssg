@@ -14,14 +14,14 @@ if (!pageSlug.endsWith("/")) pageSlug += "/";
 
 console.log(`Fetching data for slug: ${pageSlug}`)
 const { data } = await useFetch(`/api/page?slug=${pageSlug}`);
-const mathRandom = Math.random()
+const mathRandom = Math.floor(Math.random() * 10)
 </script>
 
 <template>
   <div>
     <ClientOnly>
       <NuxtLink :to="`/something/${mathRandom}`">
-        Navigate somewhere
+        Navigate to {{ mathRandom }}
       </NuxtLink>
     </ClientOnly>
     <TemplateRenderer :page-template="data?.title || 'No title'" />
