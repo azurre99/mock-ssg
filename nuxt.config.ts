@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     },
     compatibilityDate: '2024-04-03',
     routeRules: {
-        "/**": { isr: true }
+        "/**": { isr: 100 }
     },
     router: {
         options: {
@@ -20,5 +20,8 @@ export default defineNuxtConfig({
         componentIslands: {
             selectiveClient: true
         }
-    }
+    },
+    vue: {
+        runtimeCompiler: true,
+    },
 })

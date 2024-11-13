@@ -1,19 +1,21 @@
 <template>
   <div>
-    <h1>
-      {{ pageTemplate }}
-    </h1>
     <h3>
       This i client component man
     </h3>
+    <component :is="component" v-if="component" :="$attrs" />
     <Jumper />
   </div>
 </template>
 <script setup lang="ts">
+import {compile, type Component} from "vue";
+
 export interface Props {
   pageTemplate: string;
 }
 
-defineProps<Props>();
+const props = defineProps<Props>();
+
+const component = computed(() => compile(`<h1>${props.pageTemplate}</h1>`) as Component);
 
 </script>

@@ -2,17 +2,13 @@
 import { useRouter, useRoute } from 'vue-router';
 
 const router = useRouter();
-const route = useRoute();
 
 // Get the last part of the route path
-let pageSplit = route.path.split("/").filter((it) => it);
+let pageSplit = router.currentRoute.value.path.split("/").filter((it) => it);
 let lastPart = pageSplit.length > 0 ? pageSplit[pageSplit.length - 1] : "";
 
-// Generate a random number for navigation
-const mathRandom = Math.floor(Math.random() * 10);
-
 // Use useAsyncData to fetch data based on the last part of the route path
-const { data } = useAsyncData(() => $fetch(`/api/page/${lastPart}`));
+const { data } = useAsyncData(`lats-part-${lastPart}`, () => $fetch(`/api/page/${lastPart}`));
 const arr = Array.from({ length: 10 }).map((_, i) => i)
 </script>
 
