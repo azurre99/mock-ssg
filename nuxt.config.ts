@@ -24,8 +24,5 @@ export default defineNuxtConfig({
     },
     vue: {
         runtimeCompiler: true,
-    },
-    nitro: {
-        preset: 'vercel-edge'
     }
 })
