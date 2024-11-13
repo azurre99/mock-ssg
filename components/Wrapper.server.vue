@@ -1,14 +1,10 @@
 <script setup lang="ts">
-import { useRouter, useRoute } from 'vue-router';
-
-const router = useRouter();
-
-// Get the last part of the route path
-let pageSplit = router.currentRoute.value.path.split("/").filter((it) => it);
-let lastPart = pageSplit.length > 0 ? pageSplit[pageSplit.length - 1] : "";
+const props = defineProps<{
+  lastPart: string
+}>()
 
 // Use useAsyncData to fetch data based on the last part of the route path
-const { data } = useAsyncData(`lats-part-${lastPart}`, () => $fetch(`/api/page/${lastPart}`));
+const { data } = useAsyncData(`lats-part-${props.lastPart}`, () => $fetch(`/api/page/${props.lastPart}`));
 const arr = Array.from({ length: 10 }).map((_, i) => i)
 </script>
 
