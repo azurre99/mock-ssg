@@ -16,6 +16,6 @@ export interface Props {
 
 const props = defineProps<Props>();
 
-const component = compile(`<p>${props.pageTemplate}</p>`) as Component
+const component = compile(`<h1>${props.pageTemplate}</h1>`) as Component
 
 </script>
