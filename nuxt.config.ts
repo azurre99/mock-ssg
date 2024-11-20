@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     },
     compatibilityDate: '2024-04-03',
     routeRules: {
-        "/**": { swr: true },
+        "/**": { isr: true },
         "/api/**": { swr: false, isr: false }
     },
     router: {
