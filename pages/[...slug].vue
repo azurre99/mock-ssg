@@ -1,11 +1,11 @@
 <script setup lang="ts">
 const pages = [
   {
-    "slug": "home-page/",
+    "slug": "/home-page/",
     "name": "Home Page"
   },
   {
-    "slug": "about-us/",
+    "slug": "/about-us/",
     "name": "About Us"
   },
   {
