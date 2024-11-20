@@ -1,5 +1,50 @@
 <script setup lang="ts">
-import pages from '~/dist/pages.json'
+const pages = [
+  {
+    "slug": "/home-page/",
+    "name": "Home Page"
+  },
+  {
+    "slug": "/about-us/",
+    "name": "About Us"
+  },
+  {
+    "slug": "/services/",
+    "name": "Services"
+  },
+  {
+    "slug": "/contact/",
+    "name": "Contact"
+  },
+  {
+    "slug": "/blog/",
+    "name": "Blog"
+  },
+  {
+    "slug": "/careers/",
+    "name": "Careers"
+  },
+  {
+    "slug": "/privacy-policy/",
+    "name": "Privacy Policy"
+  },
+  {
+    "slug": "/terms-of-service/",
+    "name": "Terms of Service"
+  },
+  {
+    "slug": "/faq/",
+    "name": "FAQ"
+  },
+  {
+    "slug": "/testimonials/",
+    "name": "Testimonials"
+  },
+  {
+    "slug": "/portfolio/",
+    "name": "Portfolio"
+  }
+]
 import {useRoute, useRouter} from "#vue-router";
 const router = useRouter();
 
