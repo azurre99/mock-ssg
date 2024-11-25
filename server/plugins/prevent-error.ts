@@ -14,9 +14,9 @@ export default defineNitroPlugin((nitroApp) => {
 
         if (dontCacheResponse) {
             console.log('Not caching response')
-            response.headers["Cache-Control"] = "public, s-maxage=1";
-            response.headers["CDN-Cache-Control"] = "public, s-maxage=1";
-            response.headers["Vercel-CDN-Cache-Control"] = "public, s-maxage=1";
+            response.headers["Cache-Control"] = "public, s-maxage=1, stale-while-revalidate=59";
+            response.headers["CDN-Cache-Control"] = "public, s-maxage=1, stale-while-revalidate=59";
+            response.headers["Vercel-CDN-Cache-Control"] = "public, s-maxage=1, stale-while-revalidate=59";
         }
     });
 
