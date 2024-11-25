@@ -14,7 +14,7 @@ export default defineNitroPlugin((nitroApp) => {
 
         if (dontCacheResponse) {
             console.log('Not caching response')
-            response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate';
+            response.headers['Cache-Control'] = 's-maxage=1';
         }
     });
 
