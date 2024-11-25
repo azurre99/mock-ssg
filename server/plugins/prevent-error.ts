@@ -2,7 +2,7 @@ export default defineNitroPlugin((nitroApp) => {
     let dontCacheResponse = false;
 
     nitroApp.hooks.hook('error', (err) => {
-        console.log('Caching response, because of error')
+        console.log('Not caching response, because of error')
         console.error(err)
         dontCacheResponse = true;
     });
@@ -14,7 +14,9 @@ export default defineNitroPlugin((nitroApp) => {
 
         if (dontCacheResponse) {
             console.log('Not caching response')
-            response.headers['Cache-Control'] = 's-maxage=1';
+            response.headers["Cache-Control"] = "public, s-maxage=1";
+            response.headers["CDN-Cache-Control"] = "public, s-maxage=1";
+            response.headers["Vercel-CDN-Cache-Control"] = "public, s-maxage=1";
         }
     });
 
