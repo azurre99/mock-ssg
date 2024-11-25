@@ -53,7 +53,7 @@ let lastPart = pageSplit.length > 0 ? pageSplit[pageSplit.length - 1] : "";
 const { data, error } = useAsyncData(`lats-part-${lastPart}`, () => $fetch(`/api/page/${lastPart}`));
 
 if (error) {
-  createError({
+  throw createError({
     message: "Page not found",
     status: 400
   })
