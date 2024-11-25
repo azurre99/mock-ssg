@@ -60,6 +60,7 @@ const { data } = useAsyncData(`lats-part-${lastPart}`, () => $fetch(`/api/page/$
       <li v-for="item in pages" :key="item.slug">
         <NuxtLink
             :to="item.slug"
+            :external="true"
         >
           {{ item.name }}
         </NuxtLink>

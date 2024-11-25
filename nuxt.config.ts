@@ -20,9 +20,6 @@ export default defineNuxtConfig({
         }
     },
     experimental: {
-        componentIslands: {
-            selectiveClient: true
-        },
         payloadExtraction: true
     },
     vue: {

@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3>
-      This i client component man
+      This is client component
     </h3>
     <component :is="component" v-if="component" :="$attrs" />
     <Jumper />
