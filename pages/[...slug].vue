@@ -50,9 +50,9 @@ const router = useRouter();
 
 let pageSplit = router.currentRoute.value.path.split("/").filter((it) => it);
 let lastPart = pageSplit.length > 0 ? pageSplit[pageSplit.length - 1] : "";
-const { data, error } = useAsyncData(`lats-part-${lastPart}`, () => $fetch(`/api/page/${lastPart}`));
+const { data, error } = useAsyncData(`lats-part-${lastPart}`, () => $fetch(`/api/page/${lastPart}?date=${new Date().toISOString()}`));
 
-if (error) {
+if (error.value) {
   throw createError({
     message: "Page not found",
     status: 400
