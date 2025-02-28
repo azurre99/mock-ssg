@@ -19,7 +19,7 @@ const SKIP_EXTENSIONS = [
 ];
 
 export const config = {
-    matcher: ["/((?!.*\\\\.(php|js)$).*)"],
+    matcher: ['/((?!api|_next/static|favicon.ico).*)'],
 };
 
 function shouldSkipPath(pathname: string): boolean {
