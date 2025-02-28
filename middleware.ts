@@ -19,7 +19,7 @@ const SKIP_EXTENSIONS = [
 ];
 
 export const config = {
-    matcher: ['/((?!api|_next/static|favicon.ico).*)'],
+    matcher: ['/((?!api|__nitro|__nitro-|img|fonts|site\.-webmanifest|android-chrome-.*\.png|favicon.ico|favicon-*\.png|_nuxt).*)'],
 };
 
 function shouldSkipPath(pathname: string): boolean {
