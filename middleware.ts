@@ -19,7 +19,7 @@ const SKIP_EXTENSIONS = [
 ];
 
 export const config = {
-    matcher: ["/^((?!.*\\.(?:php|js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|map|json|webp)$).*)/"],
+    matcher: ["/^(?!.*\\.(php|js)$).*/"],
 };
 
 function shouldSkipPath(pathname: string): boolean {
