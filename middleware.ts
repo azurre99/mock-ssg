@@ -18,9 +18,9 @@ const SKIP_EXTENSIONS = [
     ".webp",
 ];
 
-/*export const config = {
+export const config = {
     matcher: ["/^((?!.*\\.(?:php|js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|map|json|webp)$).*)/"],
-};*/
+};
 
 function shouldSkipPath(pathname: string): boolean {
     // Check file extensions
