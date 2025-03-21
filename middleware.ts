@@ -34,6 +34,7 @@ export default function middleware(request: Request) {
     if (searchParamSize > 0) {
         const nonSeoURL = new URL(request.url);
         nonSeoURL.searchParams.set("d-seo", "true");
+        request.headers.set("d-seo", "true")
 
         console.log(`Redirecting to non SEO url: ${nonSeoURL}`);
         return rewrite(nonSeoURL);
