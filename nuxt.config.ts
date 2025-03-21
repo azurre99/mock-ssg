@@ -12,8 +12,7 @@ export default defineNuxtConfig({
         "/**": {
             isr: {
                 allowQuery: ["d-seo"],
-                expiration: false,
-                passQuery: true
+                expiration: false
             }
         },
     },

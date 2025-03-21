@@ -52,7 +52,7 @@ let pageSplit = router.currentRoute.value.path.split("/").filter((it) => it);
 let lastPart = pageSplit.length > 0 ? pageSplit[pageSplit.length - 1] : "";
 const { data, error } = useAsyncData(`lats-part-${lastPart}`, () => $fetch(`/api/page/${lastPart}?date=${new Date().toISOString()}`));
 
-const test = router.currentRoute.value.query['test']
+const disabledSEO = router.currentRoute.value.query['d-seo']
 console.log(router.currentRoute.value.query)
 
 if (error.value) {
@@ -67,7 +67,7 @@ if (error.value) {
 <template>
   <div>
     <h1>
-      Test: {{ test }}
+      SEO disabled: {{ disabledSEO }}
     </h1>
   </div>
 </template>
