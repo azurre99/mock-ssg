@@ -51,6 +51,7 @@ const router = useRouter();
 let pageSplit = router.currentRoute.value.path.split("/").filter((it) => it);
 let lastPart = pageSplit.length > 0 ? pageSplit[pageSplit.length - 1] : "";
 const { data, error } = useAsyncData(`lats-part-${lastPart}`, () => $fetch(`/api/page/${lastPart}?date=${new Date().toISOString()}`));
+const test = router.currentRoute.value.query['test']
 
 if (error.value) {
   throw createError({
@@ -63,6 +64,9 @@ if (error.value) {
 
 <template>
   <div>
+    <h1>
+      Test: {{ test }}
+    </h1>
     <ul>
       <li v-for="item in pages" :key="item.slug">
         <NuxtLink
