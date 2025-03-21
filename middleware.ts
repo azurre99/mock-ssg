@@ -37,6 +37,10 @@ export default function middleware(request: Request) {
         request.headers.set("d-seo", "true")
 
         console.log(`Redirecting to non SEO url: ${nonSeoURL}`);
-        return rewrite(nonSeoURL);
+        return rewrite(nonSeoURL, {
+            headers: {
+                "d-seo": "true"
+            }
+        });
     }
 }
