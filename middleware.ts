@@ -1,3 +1,5 @@
+import { next, rewrite } from "@vercel/edge";
+
 // File extensions to skip
 const SKIP_EXTENSIONS = [
     ".php",
@@ -26,5 +28,14 @@ function shouldSkipPath(pathname: string): boolean {
 export default function middleware(request: Request) {
     const url = new URL(request.url);
     const pathname = url.pathname;
-    console.log(`Edge middleware running on ${pathname}`);
+
+    const searchParamSize = url.searchParams.size;
+
+    if (searchParamSize > 0) {
+        const nonSeoURL = new URL(request.url);
+        nonSeoURL.searchParams.set("d-seo", "true");
+
+        console.log(`Redirecting to non SEO url: ${nonSeoURL}`);
+        return rewrite(nonSeoURL);
+    }
 }
